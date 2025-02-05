@@ -12,7 +12,7 @@ const Chatbot = () => {
     setMessages((prevMessages) => [...prevMessages, newMessage]);
 
     // Simulate ChatGPT response
-    const chatGPTResponse = { sender: "bot", text: "This feature is in development." };
+    const chatGPTResponse = { sender: "bot", text: "This feature is in development.This feature is in development.This feature is in development.This feature is in development.This feature is in development.This feature is in development.This feature is in development.This feature is in development.This feature is in development.This feature is in development.This feature is in development." };
     setTimeout(() => {
       setMessages((prevMessages) => [...prevMessages, chatGPTResponse]);
     }, 500); // Delay for ChatGPT response simulation
@@ -76,13 +76,15 @@ const Chatbot = () => {
                 message.sender === "user" ? "justify-end" : "justify-start"
               }`}
             >
-              <div
-                className={`${
-                  message.sender === "user" ? "bg-blue-500" : "bg-gray-300"
-                } text-white p-4 rounded-lg max-w-xs`}
-              >
-                {message.text}
-              </div>
+            <div
+              className={`${
+                message.sender === "user" ? "bg-blue-500 text-white" : "bg-gray-300 text-black"
+              } p-4 rounded-lg max-w-6xl break-words`}
+            >
+              {message.text}
+            </div>
+
+
             </div>
           ))}
         </div>
